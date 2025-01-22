@@ -5,6 +5,7 @@ public class Usuario extends Pessoa  {
      private String contato;
 
      public Usuario(String login, String senha, String email, String contato){
+          
          
           this.login = login;
           this.senha = senha;
