@@ -5,7 +5,7 @@ public class Usuario extends Pessoa  {
      private String contato;
 
      public Usuario(String login, String senha, String email, String contato){
-          super(nome, cpf, data_nascimento, endereco);
+         
           this.login = login;
           this.senha = senha;
           this.email = email;
