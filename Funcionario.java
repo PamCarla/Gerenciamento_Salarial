@@ -1,8 +1,9 @@
 package sistema;
 
-public class Funcionario {
-
-       private String cargo;
+public class Funcionario  extends Pessoa {
+	
+                         private int id_Funcionario;
+                         private String cargo;
 			 private String  Lista_Registro;
 			 private double Salario_Base;
 			 private String Conta_Bancaria;
