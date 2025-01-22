@@ -1,4 +1,4 @@
-public class Usuario {
+public class Usuario extends Pessoa  {
      private String login;
      private String senha;
      private String email;
@@ -10,6 +10,7 @@ public class Usuario {
           this.email = email;
           this.contato = contato;
      }
+     
 
      public void setLogin(String login){
           this.login = login;
