@@ -14,7 +14,7 @@ public class Usuario {
      public void setLogin(String login){
           this.login = login;
      }
-     public String getNome(){
+     public String getLogin(){
           return this.login;
      }
      public void setSenha(String senha){
