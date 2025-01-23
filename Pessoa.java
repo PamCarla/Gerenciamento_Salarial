@@ -1,7 +1,5 @@
 public class Pessoa {
 
-
-     private int id_pessoa;
      private String nome;
      private String cpf;
      private String data_nascimento;
