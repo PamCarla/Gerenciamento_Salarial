@@ -1,4 +1,4 @@
-public class Rendimentos implements Beneficio {
+public class Pagamentos implements Beneficio {
      @Override
      public double calcula_Beneficios(double salario_Base){
           
