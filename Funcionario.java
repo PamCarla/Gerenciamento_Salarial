@@ -1,6 +1,6 @@
 package sistema;
 
-public class Funcionario  extends Pessoa {
+public class Funcionario  extends Usuario {
 	private String cargo;
 	private String lista_Registro;
 	private double salario_Base;
@@ -14,7 +14,7 @@ public class Funcionario  extends Pessoa {
 			
 			
 	Funcionario(String cargo, String lista_Registro, double salario_Base, String Conta_Bancaria, String matricula, double valor_hora_normal,double valor_hora_extra, int horas_trabalhadas, double salario_bruto){
-		super(nome, cpf, data_nascimento, endereco);
+		super(login, senha, email, contato);
 		this.cargo = cargo;
 		this.lista_Registro = lista_Registro
 		this.salario_Base = salario_Base;
