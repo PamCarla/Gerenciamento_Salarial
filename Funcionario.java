@@ -9,8 +9,7 @@ public class Funcionario  extends Pessoa {
 			 private String Conta_Bancaria;
 			 private String matricula;
 			
-			 
-			 //CONSTRUTO
+			
 			 Funcionario(String cargo ,StringLista_Registro ,double Salario_Base,String Conta_Bancaria,String matricula ){
 				 
 				this.cargo=cargo;
