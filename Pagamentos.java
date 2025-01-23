@@ -3,7 +3,7 @@ public class Pagamentos implements Beneficio {
      public double calcula_Beneficios(double salario_Base){
           
           
-          valor_hora_normal = salario_Base / horas_trabalhas;
+          valor_hora_normal = salario_Base / horas_trabalhadas;
           valor_hora_extra = valor_hora_normal * 1,5 * hora_extras;
 
           //comissao
