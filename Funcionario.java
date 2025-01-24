@@ -1,9 +1,7 @@
-package sistema;
-
 public class Funcionario  extends Usuario {
 	private String cargo;
-	private String lista_Registro;
-	private double salario_Base;
+	private String lista_registro;
+	private double salario_base;
 	private String Conta_Bancaria;
 	private String matricula;
 	private double valor_hora_normal;
@@ -13,11 +11,11 @@ public class Funcionario  extends Usuario {
 	
 			
 			
-	Funcionario(String cargo, String lista_Registro, double salario_Base, String Conta_Bancaria, String matricula, double valor_hora_normal,double valor_hora_extra, int horas_trabalhadas, double salario_bruto){
-		super(login, senha, email, contato);
+	Funcionario(String cargo, String lista_registro, String Conta_Bancaria, String matricula, String cargo1, String lista_Registro, double salario_Base, String Conta_Bancaria1, String matricula1, double valor_hora_normal, double valor_hora_extra, int horas_trabalhadas, double salario_bruto){
+		super(null, null, null, null);
 		this.cargo = cargo;
-		this.lista_Registro = lista_Registro
-		this.salario_Base = salario_Base;
+		this.lista_registro = lista_registro;
+		this.salario_base = salario_Base;
 		this.Conta_Bancaria = Conta_Bancaria;
 		this.matricula = matricula;
 		this.valor_hora_normal = valor_hora_normal;
@@ -37,14 +35,20 @@ public class Funcionario  extends Usuario {
 		public String getCargo() {
 			return this.cargo;
 		}
-		public void setLista_Registro(String lista_Registro) {
-			this.lista_Registro = lista_Registro;
+		public void setLista_Registro(String lista_registro) {
+			this.lista_registro = lista_registro;
 		}
-		public double  getLista_Registro() {
-			return this.lista_Registro;
+		public String getLista_Registro() {
+			return this.lista_registro;
 		}
 		public void setSalario_Base(double salario_Base) {
-			this.salario_Base = salario_Base;
+			this.salario_base = salario_Base;
+		}
+		public double getSalario_Base() {
+			return salario_base;
+		}
+		public void setConta_Bancaria(String conta_Bancaria) {
+			Conta_Bancaria = conta_Bancaria;
 		}
 		public String getConta_Bancaria() {
 			return this.Conta_Bancaria;
@@ -76,11 +80,8 @@ public class Funcionario  extends Usuario {
 		public void setSalario_bruto(double salario_bruto){
 			this.salario_bruto = salario_bruto;
 		}
-				 
 
- 
-}
-}
-
-
+		public double getSalario_bruto() {
+			return salario_bruto;
+		}
 }
