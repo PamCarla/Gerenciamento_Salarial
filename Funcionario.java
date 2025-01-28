@@ -9,7 +9,7 @@ public class Funcionario  extends Usuario {
 	
 			
 			
-	Funcionario(String cargo,  String matricula, String cargo1, String lista_Registro, double salario_Base, String Conta_Bancaria1, String matricula1, double valor_hora_normal, double valor_hora_extra, int horas_trabalhadas, double salario_bruto){
+	Funcionario(  String cargo,  String matricula, String cargo1, String lista_Registro, double salario_Base, String Conta_Bancaria1, String matricula1, double valor_hora_normal, double valor_hora_extra, int horas_trabalhadas, double salario_bruto){
 		super(null, null, null, null);
 		this.cargo = cargo;
 		this.salario_base = salario_Base;
