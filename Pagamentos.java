@@ -1,24 +1,55 @@
-public class Pagamento implements Beneficio {
+public class Pagamentos implements Beneficio {
+
+    private double horasTrabalhadas;
+    private double valorHoraExtra;
+    private double inss;
+    private double irrf;
+
+    public Pagamentos(double horasTrabalhadas, double valorHoraExtra, double inss, double irrf) {
+        this.horasTrabalhadas = horasTrabalhadas;
+        this.valorHoraExtra = valorHoraExtra;
+        this.inss = inss;
+        this.irrf = irrf;
+    }
 
     @Override
-    public double calcula_Beneficios(double salario_Base) {
-        double horas_trabalhadas = 160; // Exemplo de horas trabalhadas
-        double valor_hora_normal = salario_Base / horas_trabalhadas;
+    public double calcula_Beneficios(double salarioBase) {
+        double valorHoraNormal = salarioBase / horasTrabalhadas;
+        double valorHorasExtras = valorHoraNormal * 1.5 * valorHoraExtra;
+        double salarioBruto = salarioBase + valorHorasExtras;
+        double salarioLiquido = salarioBruto - (salarioBruto * inss) - (salarioBruto * irrf);
+        return salarioLiquido;
+    }
 
-        double hora_extras = 10; // Exemplo de horas extras trabalhadas
-        double valor_hora_extra = valor_hora_normal * 1.5 * hora_extras;
+    public void setHorasTrabalhadas(double horasTrabalhadas) {
+        this.horasTrabalhadas = horasTrabalhadas;
+    }
 
-        // Cálculo do salário bruto
-        double salario_bruto = salario_Base + valor_hora_extra;
+    public double getHorasTrabalhadas() {
+        return horasTrabalhadas;
+    }
 
-        // Descontos
-        double inss = 0.11;
-        double irrf = 0.15;
-        //double vale_refeicao = 20;
-        // Cálculo do salário líquido
-        
-        double salario_liquido = salario_bruto - (salario_bruto * inss) - (salario_bruto * irrf); // + vale_refeicao;
-        
-        return salario_liquido;
+    public void setValorHoraExtra(double valorHoraExtra) {
+        this.valorHoraExtra = valorHoraExtra;
+    }
+
+    public double getValorHoraExtra() {
+        return valorHoraExtra;
+    }
+
+    public void setInss(double inss) {
+        this.inss = inss;
+    }
+
+    public double getInss() {
+        return inss;
+    }
+
+    public void setIrrf(double irrf) {
+        this.irrf = irrf;
+    }
+
+    public double getIrrf() {
+        return irrf;
     }
 }

@@ -3,18 +3,30 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 
 public class Gerenciamento_Salarial {
-    public static void main(String[] args) {
-        int escolha = JOptionPane.showOptionDialog(null, "Escolha uma opção:", "Gerenciamento Salarial",
-                JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null,
-                new String[]{"Cadastrar Funcionário", "Exibir Funcionários"}, "Cadastrar Funcionário");
 
-        if (escolha == 0) {
-            cadastrarFuncionario();
-        } else if (escolha == 1) {
-            exibirFuncionarios();
-        } else {
-            JOptionPane.showMessageDialog(null, "Programa encerrado.");
-            System.exit(0);
+    public static void main(String[] args) {
+        exibirMenu();
+    }
+
+    private static void exibirMenu() {
+        while (true) {
+            String[] opcoes = {"Cadastrar Funcionário", "Exibir Funcionários", "Sair"};
+            int escolha = JOptionPane.showOptionDialog(null, "Escolha uma opção:", "Gerenciamento Salarial",
+                    JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, opcoes, opcoes[0]);
+
+            switch (escolha) {
+                case 0:
+                    cadastrarFuncionario();
+                    break;
+                case 1:
+                    exibirFuncionarios();
+                    break;
+                case 2:
+                    System.exit(0);
+                default:
+                    JOptionPane.showMessageDialog(null, "Programa encerrado.");
+                    System.exit(0);
+            }
         }
     }
 
@@ -69,10 +81,8 @@ public class Gerenciamento_Salarial {
                         matricula, valorHoraNormal, valorHoraExtra, horasTrabalhadas, salarioBruto);
 
                 JOptionPane.showMessageDialog(null, "Funcionário cadastrado com sucesso!");
-                main(null);
             } catch (NumberFormatException e) {
                 JOptionPane.showMessageDialog(null, "Por favor, insira valores numéricos válidos.", "Erro", JOptionPane.ERROR_MESSAGE);
-                main(null);
             } catch (SQLException e) {
                 JOptionPane.showMessageDialog(null, "Erro ao salvar no banco de dados: " + e.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
                 e.printStackTrace();
@@ -80,7 +90,6 @@ public class Gerenciamento_Salarial {
             }
         } else {
             JOptionPane.showMessageDialog(null, "Cadastro cancelado.");
-            main(null);
         }
     }
 
@@ -89,7 +98,6 @@ public class Gerenciamento_Salarial {
         DefaultTableModel model = new DefaultTableModel(colunas, 0);
 
         try {
-            // Configurações do banco de dados
             String url = "jdbc:mysql://localhost:3306/bancodedados";
             String user = "root";
             String password = null;
@@ -121,20 +129,17 @@ public class Gerenciamento_Salarial {
             return;
         }
 
-        // Exibe a tabela
         JTable tabela = new JTable(model);
         JScrollPane scrollPane = new JScrollPane(tabela);
         JOptionPane.showMessageDialog(null, scrollPane, "Lista de Funcionários", JOptionPane.INFORMATION_MESSAGE);
-
-        main(null);
     }
 
     private static void inserirNoBancoDeDados(String login, String senha, String email, String contato, String cargo,
-                                              String registro, double salarioBase, String contaBancaria, String matricula,
-                                              double valorHoraNormal, double valorHoraExtra, int horasTrabalhadas, double salarioBruto)
-                                              throws SQLException {
+                                             String registro, double salarioBase, String contaBancaria, String matricula,
+                                             double valorHoraNormal, double valorHoraExtra, int horasTrabalhadas, double salarioBruto)
+            throws SQLException {
 
-        String url = "jdbc:mysql://localhost:3306/bandodedados";
+        String url = "jdbc:mysql://localhost:3306/bancodedados";
         String user = "root";
         String password = null;
 

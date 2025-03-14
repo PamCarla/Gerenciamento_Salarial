@@ -1,40 +1,46 @@
 public abstract class Conta_Bancaria {
-	
-	private String numero_conta;
-	private String agencia;
-	private double sacar;
-	public abstract void sacar();
-		
-		Conta_Bancaria(String numero_conta,String agencia,double sacar){
+    private String numeroConta;
+    private String agencia;
+    private double saldo;
 
-			this.numero_conta=numero_conta;
-			this.agencia=agencia;
-			this.sacar=sacar;
+    public Conta_Bancaria(String numeroConta, String agencia, double saldo) {
+        this.numeroConta = numeroConta;
+        this.agencia = agencia;
+        this.saldo = saldo;
+    }
+
+    public String getNumeroConta() {
+        return numeroConta;
+    }
+
+    public void setNumeroConta(String numeroConta) {
+        this.numeroConta = numeroConta;
+    }
+
+    public String getAgencia() {
+        return agencia;
+    }
+
+    public void setAgencia(String agencia) {
+        this.agencia = agencia;
+    }
+
+    public double getSaldo() {
+        return saldo;
+    }
+
+    public void setSaldo(double saldo) {
+        this.saldo = saldo;
+    }
+
+    public abstract void sacar(double valor);
+
+    public void depositar(double valor) {
+        if (valor > 0) {
+            saldo += valor;
+            System.out.println("Depósito de R$" + valor + " realizado com sucesso.");
+        } else {
+            System.out.println("Valor de depósito inválido.");
+        }
+    }
 }
-
-		public String getNumero_conta() {
-			return numero_conta;
-		}
-
-		public void setNumero_conta(String numero_conta) {
-			this.numero_conta = numero_conta;
-		}
-
-		public String getAgencia() {
-			return agencia;
-		}
-
-		public void setAgencia(String agencia) {
-			this.agencia = agencia;
-		}
-
-		public double getSacar() {
-			return sacar;
-		}
-
-		public void setSacar(double sacar) {
-			this.sacar = sacar;
-		}
-		
-	}
-	

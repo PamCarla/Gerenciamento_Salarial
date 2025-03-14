@@ -2,37 +2,45 @@ public class Pessoa {
 
      private String nome;
      private String cpf;
-     private String data_nascimento;
+     private String dataNascimento;
      private String endereco;
-     
-     public Pessoa(String nome, String cpf, String data_nascimento, String endereco){
-          this.nome = nome;
-          this.cpf = cpf;
-          this.data_nascimento = data_nascimento;
-          this.endereco = endereco;
+ 
+     public Pessoa(String nome, String cpf, String dataNascimento, String endereco) {
+         this.nome = nome;
+         this.cpf = cpf;
+         this.dataNascimento = dataNascimento;
+         this.endereco = endereco;
      }
-     public void setNome(String nome){
-          this.nome = nome;
+ 
+     public String getNome() {
+         return nome;
      }
-     public String getNome(){
-          return this.nome;
+ 
+     public void setNome(String nome) {
+         this.nome = nome;
      }
-     public void setCpf (String cpf){
-          this.cpf = cpf;
+ 
+     public String getCpf() {
+         return cpf;
      }
-     public String getCpf(){
-          return this.cpf;
+ 
+     public void setCpf(String cpf) {
+         this.cpf = cpf;
      }
-     public void setData_nascimento(String data_nascimento){
-          this.data_nascimento = data_nascimento;
+ 
+     public String getDataNascimento() {
+         return dataNascimento;
      }
-     public String getData_nascimento(){
-          return this.data_nascimento;
+ 
+     public void setDataNascimento(String dataNascimento) {
+         this.dataNascimento = dataNascimento;
      }
-     public void setEndereco(String endereco){
-          this.endereco = endereco;
+ 
+     public String getEndereco() {
+         return endereco;
      }
-     public String getEndereco(){
-          return this.endereco;
+ 
+     public void setEndereco(String endereco) {
+         this.endereco = endereco;
      }
-}
+ }

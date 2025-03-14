@@ -1,48 +1,48 @@
 public class ContraCheque {
      private Funcionario funcionario;
-     private String data_geracao;
-     private Beneficio calcular_Beneficios;
-
-
-
-public ContraCheque(Funcionario fucionario,String data_geracao,Beneficio calcular_Beneficios){
-
-     this.Funcionario=Funcionario;
-     this.data_geracao=data_geracao;
-     this.Beneficio=calcular_Beneficios;
-
-}
-
-
-public void setFuncionario(Funcionario){
-     this.Funcionario=Funcionario;
-}
-public Funcionario getFuncionario(){
-return Funcionario;
-}
-
-     public void setdata_geracao(String data_geracao){
-          this.data_geracao=data_geracao;
+     private String dataGeracao;
+     private Beneficio calcularBeneficios;
+ 
+     public ContraCheque(Funcionario funcionario, String dataGeracao, Beneficio calcularBeneficios) {
+         this.funcionario = funcionario;
+         this.dataGeracao = dataGeracao;
+         this.calcularBeneficios = calcularBeneficios;
      }
-     public String get data_geracao(){
-          return  data_geracao;
-
+ 
+     public void setFuncionario(Funcionario funcionario) {
+         this.funcionario = funcionario;
      }
-public void setcalcular_Beneficios(String calcular_Beneficios){
-     this.calcular_Beneficios=calcular_Beneficios;
-}
-
-public Beneficio getcalcular_Beneficio(){
-     return calcular_Beneficios;
-}
-
-     public void gerarContracheque(){
-          double imposto = calcular_Beneficios.calcular_Benecifios(funcionario.getSalario_Base());
-
-
-          
-          
-
+ 
+     public Funcionario getFuncionario() {
+         return funcionario;
      }
-
-}
+ 
+     public void setDataGeracao(String dataGeracao) {
+         this.dataGeracao = dataGeracao;
+     }
+ 
+     public String getDataGeracao() {
+         return dataGeracao;
+     }
+ 
+     public void setCalcularBeneficios(Beneficio calcularBeneficios) {
+         this.calcularBeneficios = calcularBeneficios;
+     }
+ 
+     public Beneficio getCalcularBeneficios() {
+         return calcularBeneficios;
+     }
+ 
+     public void gerarContracheque() {
+         if (calcularBeneficios != null && funcionario != null) {
+             double beneficios = calcularBeneficios.calcula_Beneficios(funcionario.getSalarioBase());
+             // Aqui você adicionaria a lógica para calcular impostos, descontos, etc.
+             // E também a lógica para exibir o contracheque.
+             System.out.println("Contracheque para: " + funcionario.getNome());
+             System.out.println("Benefícios: " + beneficios);
+             // ... mais detalhes do contracheque ...
+         } else {
+             System.out.println("Erro: Funcionário ou cálculo de benefícios não inicializados.");
+         }
+     }
+ }
